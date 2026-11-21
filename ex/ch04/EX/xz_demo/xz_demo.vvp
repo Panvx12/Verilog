@@ -1,0 +1,29 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000001df83912620 .scope module, "xz_demo" "xz_demo" 2 1;
+ .timescale 0 0;
+v000001df839464e0_0 .var "r", 3 0;
+o000001df83946af8 .functor BUFZ 4, C4<zzzz>; HiZ drive
+v000001df839127b0_0 .net "w", 3 0, o000001df83946af8;  0 drivers
+    .scope S_000001df83912620;
+T_0 ;
+    %vpi_call 2 6 "$display", "before assign: r=%b", v000001df839464e0_0 {0 0 0};
+    %vpi_call 2 7 "$display", "undriven wire: w=%b", v000001df839127b0_0 {0 0 0};
+    %pushi/vec4 10, 0, 4;
+    %store/vec4 v000001df839464e0_0, 0, 4;
+    %vpi_call 2 9 "$display", "after  assign: r=%b", v000001df839464e0_0 {0 0 0};
+    %vpi_call 2 10 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "xz_demo.v";

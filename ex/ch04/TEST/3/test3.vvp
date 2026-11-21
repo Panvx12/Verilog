@@ -1,0 +1,50 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000001fa9dacad10 .scope module, "test3" "test3" 2 1;
+ .timescale 0 0;
+v000001fa9dd92510_0 .net *"_ivl_1", 0 0, L_000001fa9de082f0;  1 drivers
+v000001fa9dacef10_0 .net *"_ivl_11", 0 0, L_000001fa9de08cf0;  1 drivers
+v000001fa9dd925b0_0 .net *"_ivl_13", 0 0, L_000001fa9de08430;  1 drivers
+v000001fa9dd92650_0 .net *"_ivl_15", 0 0, L_000001fa9de08bb0;  1 drivers
+v000001fa9dd926f0_0 .net *"_ivl_3", 0 0, L_000001fa9de081b0;  1 drivers
+v000001fa9dd92790_0 .net *"_ivl_5", 0 0, L_000001fa9de08610;  1 drivers
+v000001fa9dd92830_0 .net *"_ivl_7", 0 0, L_000001fa9de08250;  1 drivers
+v000001fa9dd928d0_0 .net *"_ivl_9", 0 0, L_000001fa9de08390;  1 drivers
+v000001fa9de08030_0 .var "a", 7 0;
+v000001fa9de086b0_0 .net "rev_a", 7 0, L_000001fa9de08d90;  1 drivers
+L_000001fa9de082f0 .part v000001fa9de08030_0, 0, 1;
+L_000001fa9de081b0 .part v000001fa9de08030_0, 1, 1;
+L_000001fa9de08610 .part v000001fa9de08030_0, 2, 1;
+L_000001fa9de08250 .part v000001fa9de08030_0, 3, 1;
+L_000001fa9de08390 .part v000001fa9de08030_0, 4, 1;
+L_000001fa9de08cf0 .part v000001fa9de08030_0, 5, 1;
+L_000001fa9de08430 .part v000001fa9de08030_0, 6, 1;
+L_000001fa9de08bb0 .part v000001fa9de08030_0, 7, 1;
+LS_000001fa9de08d90_0_0 .concat [ 1 1 1 1], L_000001fa9de08bb0, L_000001fa9de08430, L_000001fa9de08cf0, L_000001fa9de08390;
+LS_000001fa9de08d90_0_4 .concat [ 1 1 1 1], L_000001fa9de08250, L_000001fa9de08610, L_000001fa9de081b0, L_000001fa9de082f0;
+L_000001fa9de08d90 .concat [ 4 4 0 0], LS_000001fa9de08d90_0_0, LS_000001fa9de08d90_0_4;
+    .scope S_000001fa9dacad10;
+T_0 ;
+    %pushi/vec4 147, 0, 8;
+    %store/vec4 v000001fa9de08030_0, 0, 8;
+    %end;
+    .thread T_0;
+    .scope S_000001fa9dacad10;
+T_1 ;
+    %delay 10, 0;
+    %vpi_call 2 9 "$display", "%b", v000001fa9de086b0_0 {0 0 0};
+    %vpi_call 2 10 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "test3.v";
