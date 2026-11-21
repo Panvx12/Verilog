@@ -1,7 +1,0 @@
-module half_adder (
-    input wire a, b,
-    output wire sum, cout;
-);
-    assign sum = a ^ b;
-    assign cout = a & b;
-endmodule
